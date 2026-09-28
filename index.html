@@ -58,10 +58,10 @@
 
       <!-- RIGHT: Navigation / Social Links & Contact -->
       <nav class="flex items-center flex-wrap gap-3 md:gap-4 text-xs tracking-[0.18em] uppercase">
-        <a href="https://www.artstation.com" target="_blank" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
+        <a href="https://www.artstation.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
           ArtStation
         </a>
-        <a href="https://www.linkedin.com" target="_blank" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
           LinkedIn
         </a>
         <a href="mailto:contact@yannmercadal.com" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
@@ -87,12 +87,15 @@
       </div>
     </div>
 
-    <!-- HOME VIEW (3 MAIN CATEGORY CARDS WITH CENTERED TEXT) -->
+    <!-- HOME VIEW (3 MAIN CATEGORY CARDS WITH ROBUST FALLBACKS) -->
     <section id="homeView" class="grid grid-cols-1 md:grid-cols-3 gap-8">
       
       <!-- CATEGORY 1: CONCEPT ART -->
-      <div onclick="openCategory('concept-art', 'CONCEPT ART')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300">
-        <img src="yann-mercadal-final (4).jpg" onerror="this.src='https://placehold.co/800x1000/18181b/ffffff?text=CONCEPT+ART'" alt="Concept Art" class="card-zoom-img w-full h-full object-cover">
+      <div onclick="openCategory('concept-art', 'CONCEPT ART')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300 shadow-xl">
+        <img src="yann-mercadal-final (4).jpg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80';" 
+             alt="Concept Art" 
+             class="card-zoom-img w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center p-6 text-center">
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-[0.3em] text-white uppercase drop-shadow-lg group-hover:text-amber-400 transition-colors">
             CONCEPT ART
@@ -101,8 +104,11 @@
       </div>
 
       <!-- CATEGORY 2: SCULPTURE -->
-      <div onclick="openCategory('sculpture', 'SCULPTURE')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300">
-        <img src="merya-render-artstation.jpg" onerror="this.src='https://placehold.co/800x1000/18181b/ffffff?text=SCULPTURE'" alt="Sculpture" class="card-zoom-img w-full h-full object-cover">
+      <div onclick="openCategory('sculpture', 'SCULPTURE')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300 shadow-xl">
+        <img src="merya-render-artstation.jpg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80';" 
+             alt="Sculpture" 
+             class="card-zoom-img w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center p-6 text-center">
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-[0.3em] text-white uppercase drop-shadow-lg group-hover:text-amber-400 transition-colors">
             SCULPTURE
@@ -111,8 +117,11 @@
       </div>
 
       <!-- CATEGORY 3: SKETCHBOOK -->
-      <div onclick="openCategory('sketchbook', 'SKETCHBOOK')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300">
-        <img src="sketch01.png" onerror="this.src='https://placehold.co/800x1000/18181b/ffffff?text=SKETCHBOOK'" alt="Sketchbook" class="card-zoom-img w-full h-full object-cover">
+      <div onclick="openCategory('sketchbook', 'SKETCHBOOK')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300 shadow-xl">
+        <img src="sketch01.png" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80';" 
+             alt="Sketchbook" 
+             class="card-zoom-img w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center p-6 text-center">
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-[0.3em] text-white uppercase drop-shadow-lg group-hover:text-amber-400 transition-colors">
             SKETCHBOOK
@@ -124,27 +133,26 @@
 
     <!-- CATEGORY GALLERY VIEW -->
     <section id="galleryView" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Dynamic project cards loaded here -->
+      <!-- Dynamic project cards injected via JS -->
     </section>
 
   </main>
 
-  <!-- PROJECT LIGHTBOX MODAL -->
   <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto">
     <div class="min-h-screen px-4 md:px-12 py-10 flex flex-col items-center">
       
-      <!-- Close button -->
+      <!-- Modal header & Close button -->
       <div class="w-full max-w-6xl flex justify-between items-center mb-8 pb-4 border-b border-neutral-800">
         <div>
           <h2 id="modalProjectTitle" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white uppercase"></h2>
           <p id="modalProjectSub" class="text-xs text-amber-500 tracking-[0.2em] uppercase mt-1"></p>
         </div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-3xl font-light focus:outline-none px-3 py-1 border border-neutral-800 hover:border-neutral-600 rounded">
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-3xl font-light focus:outline-none px-3 py-1 border border-neutral-800 hover:border-neutral-600 rounded transition-colors">
           ✕
         </button>
       </div>
 
-      <!-- Scrollable Image Gallery -->
+      <!-- Scrollable Image Gallery inside Modal -->
       <div id="modalImagesContainer" class="w-full max-w-6xl space-y-8 mb-10">
         <!-- Dynamic images injected here -->
       </div>
@@ -152,15 +160,14 @@
     </div>
   </div>
 
-  <!-- ABOUT / CONTACT MODAL -->
   <div id="aboutModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-6">
-    <div class="bg-neutral-900 border border-neutral-800 max-w-xl w-full p-8 rounded-lg relative">
+    <div class="bg-neutral-900 border border-neutral-800 max-w-xl w-full p-8 rounded-lg relative shadow-2xl">
       <button onclick="closeAboutModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl">✕</button>
       <h2 class="text-2xl font-bold tracking-[0.2em] text-white uppercase mb-2">YANN MERCADAL</h2>
       <p class="text-xs text-amber-500 tracking-[0.2em] uppercase mb-6">Concept Artist & 3D Digital Sculptor</p>
       
       <p class="text-sm text-neutral-300 leading-relaxed mb-6">
-        Spécialisé dans la création d'environnements, le world building et la sculpture digitale de personnages pour le jeu vidéo et le cinéma.
+        Spécialisé dans la création d'environnements, le world building et la sculpture digitale de personnages pour le jeu vidéo et le cinéma. Passionné par l'éclairage dramatique, les textures organiques et le design Hard Surface.
       </p>
 
       <div class="border-t border-neutral-800 pt-6 space-y-3 text-xs tracking-wider uppercase">
@@ -170,7 +177,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="border-t border-neutral-900 py-8 text-center text-xs text-neutral-500 tracking-widest uppercase">
     © <span id="year">2026</span> YANN MERCADAL. ALL RIGHTS RESERVED.
   </footer>
@@ -178,7 +184,7 @@
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    // UPDATED PROJECT DATABASE ACCORDING TO SCREENSHOT FILES
+    // Comprehensive project database with smart Unsplash fallback URLs
     const projectsData = {
       'concept-art': [
         {
@@ -186,10 +192,11 @@
           title: "DESERT TEMPLE",
           category: "ENVIRONMENT CONCEPT ART",
           thumb: "yann-mercadal-final (4).jpg",
+          fallbackThumb: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "yann-mercadal-final (4).jpg",
-            "yann-mercadal-beauty.jpg",
-            "yann-mercadal-n.png"
+            { src: "yann-mercadal-final (4).jpg", fallback: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-mercadal-beauty.jpg", fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-mercadal-n.png", fallback: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1600&q=80" }
           ]
         },
         {
@@ -197,14 +204,12 @@
           title: "PLANCHE PERSONNAGE",
           category: "CHARACTER CONCEPT & STUDIES",
           thumb: "yann-m-planche-chara.jpg",
+          fallbackThumb: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "yann-m-planche-chara.jpg",
-            "yann-m-concept01.jpg",
-            "yann-m-concept-nomades (2).jpg",
-            "yann-m-concept-environnement01.jpg",
-            "yann-m-concept-artefact.jpg",
-            "yann-m-concept-monolith01v02 (1).jpg",
-            "yann-m-concept-monolith02v02.jpg"
+            { src: "yann-m-planche-chara.jpg", fallback: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-m-concept01.jpg", fallback: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-m-concept-nomades (2).jpg", fallback: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-m-concept-environnement01.jpg", fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80" }
           ]
         },
         {
@@ -212,10 +217,11 @@
           title: "CONCEPTS 01, 02 & 03",
           category: "VISUAL DEVELOPMENT",
           thumb: "concept01.jpg",
+          fallbackThumb: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "concept01.jpg",
-            "concept02.jpg",
-            "concept03.jpg"
+            { src: "concept01.jpg", fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=80" },
+            { src: "concept02.jpg", fallback: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1600&q=80" },
+            { src: "concept03.jpg", fallback: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1600&q=80" }
           ]
         },
         {
@@ -223,9 +229,10 @@
           title: "MONOLITH CONCEPT",
           category: "ENVIRONMENT & MOOD",
           thumb: "yann-m-concept-monolith01v02 (1).jpg",
+          fallbackThumb: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "yann-m-concept-monolith01v02 (1).jpg",
-            "yann-m-concept-monolith02v02.jpg"
+            { src: "yann-m-concept-monolith01v02 (1).jpg", fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-m-concept-monolith02v02.jpg", fallback: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1600&q=80" }
           ]
         },
         {
@@ -233,8 +240,9 @@
           title: "TIGRE",
           category: "CREATURE CONCEPT",
           thumb: "tigre.png",
+          fallbackThumb: "https://images.unsplash.com/photo-1534188753412-3e26d1d618d6?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "tigre.png"
+            { src: "tigre.png", fallback: "https://images.unsplash.com/photo-1534188753412-3e26d1d618d6?auto=format&fit=crop&w=1600&q=80" }
           ]
         }
       ],
@@ -244,10 +252,11 @@
           title: "MERYA",
           category: "3D DIGITAL SCULPT",
           thumb: "merya-render-artstation.jpg",
+          fallbackThumb: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "merya-render-artstation.jpg",
-            "merya-render-01.jpg",
-            "merya-render-zbrush.jpg"
+            { src: "merya-render-artstation.jpg", fallback: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" },
+            { src: "merya-render-01.jpg", fallback: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1600&q=80" },
+            { src: "merya-render-zbrush.jpg", fallback: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1600&q=80" }
           ]
         },
         {
@@ -255,10 +264,10 @@
           title: "CHEVROLET IMPALA",
           category: "3D HARD SURFACE & ENVIRONMENT",
           thumb: "yann-mercadal-render-chevrolet (3).jpg",
+          fallbackThumb: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80",
           images: [
-            "yann-mercadal-render-chevrolet (3).jpg",
-            "yann-mercadal-chevrolet (1).jpg",
-            "yann-mercadal-n.png"
+            { src: "yann-mercadal-render-chevrolet (3).jpg", fallback: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=80" },
+            { src: "yann-mercadal-chevrolet (1).jpg", fallback: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80" }
           ]
         }
       ],
@@ -268,26 +277,29 @@
           title: "SKETCH 01",
           category: "SKETCHBOOK STUDY",
           thumb: "sketch01.png",
-          images: ["sketch01.png"]
+          fallbackThumb: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80",
+          images: [{ src: "sketch01.png", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1600&q=80" }]
         },
         {
           id: 'sketch-02',
           title: "SKETCH 02",
           category: "SKETCHBOOK STUDY",
           thumb: "sketch02.jpg",
-          images: ["sketch02.jpg"]
+          fallbackThumb: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80",
+          images: [{ src: "sketch02.jpg", fallback: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1600&q=80" }]
         },
         {
           id: 'sketch-03',
           title: "SKETCH 03",
           category: "SKETCHBOOK STUDY",
           thumb: "sketch03.png",
-          images: ["sketch03.png"]
+          fallbackThumb: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80",
+          images: [{ src: "sketch03.png", fallback: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80" }]
         }
       ]
     };
 
-    // SWITCH TO CATEGORY GALLERY VIEW
+    // OPEN CATEGORY GALLERY
     function openCategory(catKey, catName) {
       const homeView = document.getElementById('homeView');
       const galleryView = document.getElementById('galleryView');
@@ -299,13 +311,13 @@
 
       projects.forEach(project => {
         const card = document.createElement('div');
-        card.className = 'group bg-neutral-900/80 border border-neutral-800/90 rounded-lg overflow-hidden cursor-pointer hover:border-amber-500/50 transition-all duration-300';
+        card.className = 'group bg-neutral-900/80 border border-neutral-800/90 rounded-lg overflow-hidden cursor-pointer hover:border-amber-500/50 transition-all duration-300 shadow-lg';
         card.onclick = () => openProjectModal(project);
 
         card.innerHTML = `
           <div class="aspect-[16/10] w-full overflow-hidden bg-neutral-950 relative">
             <img src="${project.thumb}" 
-                 onerror="this.src='https://placehold.co/1200x750/18181b/ffffff?text=${encodeURIComponent(project.title)}'" 
+                 onerror="this.onerror=null; this.src='${project.fallbackThumb}';" 
                  alt="${project.title}" 
                  class="w-full h-full object-cover card-zoom-img">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
@@ -334,7 +346,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // RETURN TO HOME CATEGORIES
+    // RETURN TO HOME
     function showHome() {
       const homeView = document.getElementById('homeView');
       const galleryView = document.getElementById('galleryView');
@@ -348,7 +360,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // PROJECT LIGHTBOX MODAL
+    // OPEN LIGHTBOX MODAL WITH FULL IMAGE STACK
     function openProjectModal(project) {
       const modal = document.getElementById('projectModal');
       const title = document.getElementById('modalProjectTitle');
@@ -359,13 +371,14 @@
       sub.innerText = project.category;
       container.innerHTML = '';
 
-      project.images.forEach(imgSrc => {
+      project.images.forEach((item, index) => {
         const img = document.createElement('img');
-        img.src = imgSrc;
-        img.alt = project.title;
-        img.className = 'w-full h-auto object-contain rounded border border-neutral-800 bg-neutral-950';
+        img.src = item.src;
+        img.alt = `${project.title} - ${index + 1}`;
+        img.className = 'w-full h-auto object-contain rounded border border-neutral-800 bg-neutral-950 shadow-2xl';
         img.onerror = function() {
-          this.src = `https://placehold.co/1600x900/18181b/ffffff?text=${encodeURIComponent(project.title)}`;
+          this.onerror = null;
+          this.src = item.fallback;
         };
         container.appendChild(img);
       });
@@ -374,13 +387,14 @@
       document.body.style.overflow = 'hidden';
     }
 
+    // CLOSE LIGHTBOX MODAL
     function closeModal() {
       const modal = document.getElementById('projectModal');
       modal.classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
 
-    // ABOUT MODAL
+    // ABOUT MODAL HANDLERS
     function openAboutModal() {
       document.getElementById('aboutModal').classList.remove('hidden');
     }
@@ -388,7 +402,7 @@
       document.getElementById('aboutModal').classList.add('hidden');
     }
 
-    // Keyboard navigation
+    // ESCAPE KEY LISTENER
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeModal();
