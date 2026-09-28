@@ -114,7 +114,7 @@
 
       <!-- CATEGORY 3: SKETCHBOOK -->
       <div onclick="openCategory('sketchbook', 'SKETCHBOOK')" class="group relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer bg-neutral-900 border border-neutral-800/80 hover:border-amber-500/50 transition-all duration-300">
-        <img src="sketch01.jpg" onerror="this.src='https://placehold.co/800x1000/18181b/ffffff?text=SKETCHBOOK'" alt="Sketchbook" class="card-zoom-img w-full h-full object-cover">
+        <img src="sketch01.png" onerror="this.src='https://placehold.co/800x1000/18181b/ffffff?text=SKETCHBOOK'" alt="Sketchbook" class="card-zoom-img w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center p-6 text-center">
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-[0.3em] text-white uppercase drop-shadow-lg group-hover:text-amber-400 transition-colors">
             SKETCHBOOK
@@ -180,7 +180,7 @@
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    // UPDATED PROJECT DATABASE ACCORDING TO USER SPECIFICATIONS
+    // UPDATED PROJECT DATABASE ACCORDING TO SPECIFICATIONS
     const projectsData = {
       'concept-art': [
         {
@@ -190,21 +190,51 @@
           thumb: "yann-mercadal-final (4).jpg",
           images: [
             'yann-mercadal-final (4).jpg',
-            'yann-m-concept01.jpg',
-            'yann-m-concept-monolith01v02.jpg',
-            'yann-m-concept-monolith02v02.jpg',
-            'concept.jpg'
+            'yann-mercadal-beauty.jpg',
+            'yann-mercadal-n.png'
           ]
         },
         {
-          id: 'character-studies',
-          title: "PLANCHE PERSONNAGES",
+          id: 'planche-personnages',
+          title: "PLANCHE PERSONNAGE",
           category: "CHARACTER CONCEPT & STUDIES",
           thumb: "yann-m-planche-chara.jpg",
           images: [
-            'yann-m-planche-chara.jpg',
+            'yann-m-concept01.jpg',
+            'yann-m-concept-nomades (2).jpg',
+            'yann-m-concept-environnement01.jpg',
             'yann-m-concept-artefact.jpg',
-            'yann-m-concept-nomades.jpg'
+            'yann-m-planche-chara.jpg',
+            'yann-m-concept-monolith01v02(1).jpg',
+            'yann-m-concept-monolith02v02.jpg'
+          ]
+        },
+        {
+          id: 'concept-01-02',
+          title: "CONCEPT 01 & 02",
+          category: "VISUAL DEVELOPMENT",
+          thumb: 'concept.jpg',
+          images: [
+            'concept.jpg',
+            'yann-m-concept01.jpg'
+          ]
+        },
+        {
+          id: 'concept-03',
+          title: "CONCEPT 03",
+          category: "ENVIRONMENT & MOOD",
+          thumb: 'yann-m-concept-monolith01v02(1).jpg',
+          images: [
+            'yann-m-concept-monolith01v02(1).jpg'
+          ]
+        },
+        {
+          id: 'tigre',
+          title: "TIGRE",
+          category: "CREATURE CONCEPT",
+          thumb: 'tigre.png',
+          images: [
+            'tigre.png'
           ]
         }
       ],
@@ -228,7 +258,7 @@
           images: [
             'yann-mercadal-render-chevrolet (3).jpg',
             'yann-mercadal-chevrolet (1).jpg',
-            'yann-mercadal-n.jpg'
+            'yann-mercadal-n.png'
           ]
         }
       ],
@@ -237,22 +267,22 @@
           id: 'sketch-01',
           title: "SKETCH 01",
           category: "SKETCHBOOK STUDY",
-          thumb: "sketch01.jpg",
-          images: ['sketch01.jpg']
+          thumb: "sketch01.png",
+          images: ['sketch01.png']
         },
         {
           id: 'sketch-02',
           title: "SKETCH 02",
           category: "SKETCHBOOK STUDY",
-          thumb: "sketch02.jpg",
-          images: ['sketch02.jpg']
+          thumb: "sketch02.jpeg",
+          images: ['sketch02.jpeg']
         },
         {
           id: 'sketch-03',
           title: "SKETCH 03",
           category: "SKETCHBOOK STUDY",
-          thumb: "sketch03.jpg",
-          images: ['sketch03.jpg']
+          thumb: "sketch03.png",
+          images: ['sketch03.png']
         }
       ]
     };
