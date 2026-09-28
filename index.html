@@ -1,1 +1,320 @@
-Yann Mercadal — Concept & Environment Art
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yann Mercadal — Concept & Environment Art</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* En-tête */
+    header {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem 2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 0.2rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #999;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Section Portfolio */
+    .portfolio-section {
+      max-width: 1400px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 4px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-img-wrapper {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.04);
+    }
+
+    .card-info {
+      padding: 1.2rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-meta {
+      font-size: 0.82rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Fenêtre Modale / Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      overflow-y: auto;
+      z-index: 1000;
+      padding: 3rem 1rem;
+    }
+
+    .modal-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #161616;
+      border-radius: 6px;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 2.5rem;
+      cursor: pointer;
+      color: #888;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+
+    .modal-header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #282828;
+      padding-bottom: 1.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-desc {
+      color: #aaa;
+      font-size: 0.95rem;
+      max-width: 800px;
+    }
+
+    .modal-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* Pied de page */
+    footer {
+      max-width: 1400px;
+      margin: 5rem auto 3rem auto;
+      padding: 2rem;
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 0.85rem;
+    }
+</style>
+</head>
+<body>
+<header>
+    <div>
+      <a href="#" class="logo-title">Yann Mercadal</a>
+      <div class="subtitle">Concept Artist & Environment Artist</div>
+    </div>
+    <nav>
+      <a href="#">Portfolio</a>
+      <a href="mailto:ton-email@gmail.com">Contact</a>
+    </nav>
+  </header>
+<main class="portfolio-section">
+    <div class="grid" id="portfolio-grid"></div>
+  </main>
+  <!-- Modale d'affichage de projet -->
+<div class="modal" id="project-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-desc" id="modal-desc"></p>
+      </div>
+      <div class="modal-gallery" id="modal-gallery"></div>
+    </div>
+  </div>
+<footer>
+    <div>&copy; 2026 Yann Mercadal. Tous droits réservés.</div>
+    <div>Disponible pour du travail en Freelance / CDI</div>
+  </footer>
+<script>
+    const projects = [
+      {
+        title: "Environnement Monolithe",
+        category: "Concept Art / Décor",
+        thumb: "yann-m-concept-monolith01v02 ....jpg",
+        desc: "Recherches d'ambiance et études de structures monolithiques.",
+        images: [
+          "yann-m-concept-monolith01v02 ....jpg",
+          "yann-m-concept-monolith02v02....jpg",
+          "yann-m-concept-environnement.jpg"
+        ]
+      },
+      {
+        title: "Projet Chevrolet",
+        category: "3D / Environment Art",
+        thumb: "yann-mercadal-chevrolet (1).jpg",
+        desc: "Rendu 3D et études de véhicule en environnement.",
+        images: [
+          "yann-mercadal-chevrolet (1).jpg",
+          "yann-mercadal-render-chevrolet ...jpg"
+        ]
+      },
+      {
+        title: "Rendus Merya & ZBrush",
+        category: "3D Sculpting & Render",
+        thumb: "merya-render-01.jpg",
+        desc: "Sculpt 3D et passes de rendus.",
+        images: [
+          "merya-render-01.jpg",
+          "merya-render-artstation.jpg",
+          "merya-render-zbrush.jpg"
+        ]
+      },
+      {
+        title: "Concept Art Nomades & Personnages",
+        category: "Concept Art / Character & Prop",
+        thumb: "yann-m-concept-nomades (2).jpg",
+        desc: "Recherches de personnages, planches de concepts et artefacts.",
+        images: [
+          "yann-m-concept-nomades (2).jpg",
+          "yann-m-concept01.jpg",
+          "yann-m-planche-chara.jpg",
+          "yann-m-concept-artefact.jpg"
+        ]
+      }
+    ];
+
+    const grid = document.getElementById('portfolio-grid');
+    projects.forEach((proj, index) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.onclick = () => openModal(index);
+      card.innerHTML = `
+        <div class="card-img-wrapper">
+          <img src="${proj.thumb}" alt="${proj.title}">
+        </div>
+        <div class="card-info">
+          <div class="card-title">${proj.title}</div>
+          <div class="card-meta">${proj.category}</div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    function openModal(index) {
+      const proj = projects[index];
+      document.getElementById('modal-title').innerText = proj.title;
+      document.getElementById('modal-desc').innerText = proj.desc;
+      
+      const gallery = document.getElementById('modal-gallery');
+      gallery.innerHTML = proj.images.map(imgUrl => `<img src="${imgUrl}" alt="Projet">`).join('');
+      
+      document.getElementById('project-modal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('project-modal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('project-modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+</body>
+</html>
