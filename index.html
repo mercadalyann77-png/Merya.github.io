@@ -25,25 +25,24 @@
       position: relative;
     }
 
-              /* Style pour afficher exactement 2 rangées d'oiseaux côte à côte */
-    .bird-column {
+               /* Nuée d'oiseaux géante sur tout le fond, coupée net en bas */
+    body::before {
+      content: "";
       position: fixed;
-      top: 260px; /* Aligné sous la courbe de ta bannière */
-      width: 260px; /* LARGEUR DOUBLE : Assez grand pour mettre exactement 2 oiseaux côte à côte */
-      height: 480px; /* S'arrête net avant tes mentions légales */
+      top: 260px; /* Aligné pile sous la courbe de ta bannière */
+      left: 0;
+      width: 100%; /* S'étale sur TOUTE la largeur du site */
+      height: 520px; /* S'arrête net au ras de tes 3 images */
       background-image: url('oiseaux.gif');
-      background-repeat: repeat; /* Autorise la répétition en largeur ET en hauteur */
+      background-repeat: repeat; /* S'étale partout en largeur et hauteur */
       background-position: left top;
-      background-size: 130px; /* TAILLE DE L'OISEAU : 130px x 2 = 260px (le compte est parfait) */
+      background-size: 130px; /* Conserve la taille actuelle que tu aimes */
       filter: invert(1) brightness(2); /* Force le blanc pur */
-      opacity: 0.25;
+      opacity: 0.25; /* Reste discret sous ton travail */
       pointer-events: none;
       z-index: 0;
       mix-blend-mode: screen; /* Rend le fond du GIF 100% transparent */
     }
-
-    .bird-left { left: 10px; }   /* Collé au bord gauche */
-    .bird-right { right: 10px; } /* Collé au bord droit */
 
 
     }
@@ -115,9 +114,6 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-300">
-    <div class="bird-column bird-left"></div>
-  <div class="bird-column bird-right"></div>
-
  <!-- BANNIÈRE INCURVÉE AVEC VOTRE IMAGE -->
   <header class="banner-container">
     <div class="banner-background"></div>
