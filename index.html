@@ -198,7 +198,7 @@
   </main>
 
   <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto">
-    <div class="min-h-screen px-4 md:px-12 py-10 flex flex-col items-center">
+        <div id="modalBackground" class="min-h-screen px-4 md:px-12 py-10 flex flex-col items-center">
       
       <!-- Modal header & Close button -->
       <div class="w-full max-w-6xl flex justify-between items-center mb-8 pb-4 border-b border-neutral-800">
@@ -454,6 +454,12 @@
       modal.classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
+        document.getElementById('modalBackground').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeModal();
+      }
+    });
+
 
     // ABOUT MODAL HANDLERS
     function openAboutModal() {
