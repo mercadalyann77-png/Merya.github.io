@@ -421,18 +421,19 @@
 
       projects.forEach(project => {
         const card = document.createElement('div');
-    card.className = 'group bg-neutral-900 border border-neutral-800/80 rounded overflow-hidden cursor-pointer hover:border-amber-500/50 transition-all duration-300 shadow-lg';
+      card.className = 'group bg-neutral-900 border border-neutral-800/80 rounded overflow-hidden cursor-pointer hover:border-amber-500/50 transition-all duration-300 shadow-lg';
     card.onclick = () => openProjectModal(project);
 
     card.innerHTML = `
       <div class="aspect-square w-full overflow-hidden bg-neutral-950 relative">
-        <img src="\${project.thumb}" 
-             onerror="this.onerror=null; this.src='\${project.fallbackThumb}';" 
-             alt="\${project.title}" 
+        <img src="${project.thumb}" 
+             onerror="this.onerror=null; this.src='${project.fallbackThumb}';" 
+             alt="${project.title}" 
              class="w-full h-full object-cover card-zoom-img">
         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
       </div>
     `;
+
 
         galleryView.appendChild(card);
       });
