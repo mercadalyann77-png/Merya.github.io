@@ -234,27 +234,29 @@
 
   </main>
 
-  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto">
-        <div id="modalBackground" class="min-h-screen px-4 md:px-12 py-10 flex flex-col items-center">
+  <!-- MODALE STYLE CLAIRE HUMMEL (FOND TRANSPARENT ET CROIX ÉPURÉE) -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm overflow-y-auto">
+    <div id="modalBackground" class="min-h-screen px-4 md:px-12 py-6 flex flex-col items-center relative">
       
-      <!-- Modal header & Close button -->
-      <div class="w-full max-w-6xl flex justify-between items-center mb-8 pb-4 border-b border-neutral-800">
-        <div>
-          <h2 id="modalProjectTitle" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white uppercase"></h2>
-          <p id="modalProjectSub" class="text-xs text-amber-500 tracking-[0.2em] uppercase mt-1"></p>
-        </div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-3xl font-light focus:outline-none px-3 py-1 border border-neutral-800 hover:border-neutral-600 rounded transition-colors">
-          ✕
-        </button>
+      <!-- Bouton Fermer épuré style Claire Hummel (tout en haut à droite) -->
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-4xl font-light focus:outline-none transition-colors z-50" title="Fermer">
+        ✕
+      </button>
+
+      <!-- Titres épurés sans bordure ni ligne séparatrice -->
+      <div class="w-full max-w-5xl text-left mt-8 mb-6">
+        <h2 id="modalProjectTitle" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white uppercase"></h2>
+        <p id="modalProjectSub" class="text-[10px] text-neutral-400 tracking-[0.2em] uppercase mt-1"></p>
       </div>
 
-      <!-- Scrollable Image Gallery inside Modal -->
-      <div id="modalImagesContainer" class="w-full max-w-6xl space-y-8 mb-10">
+      <!-- Conteneur d'images centré -->
+      <div id="modalImagesContainer" class="w-full max-w-5xl flex flex-col items-center space-y-6 mb-10">
         <!-- Dynamic images injected here -->
       </div>
 
     </div>
   </div>
+
 
   <div id="aboutModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-6">
     <div class="bg-neutral-900 border border-neutral-800 max-w-xl w-full p-8 rounded-lg relative shadow-2xl">
