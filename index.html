@@ -25,24 +25,38 @@
       position: relative;
     }
 
-    /* Effet d'animation des oiseaux en mosaïque sur le fond */
-    body::before {
-      content: "";
+      /* Conteneur pour masquer le débordement sur mobile */
+    .wings-decor {
       position: fixed;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('oiseaux.gif');
-      background-repeat: repeat;
-      background-size: 160px; /* J'ai réduit la taille pour en avoir un peu plus sur les côtés */
-      
-      /* --- ASTUCE MAGIQUE POUR RENDRE LES OISEAUX BLANCS --- */
-      filter: invert(1) brightness(2); 
-      
-      opacity: 0.25; /* Augmenté à 25% pour qu'ils ressortent proprement en blanc sans flasher les yeux */
+      bottom: 0;
+      width: 140px; /* Largeur de la zone des oiseaux sur les côtés */
       pointer-events: none;
       z-index: 0;
+      overflow: hidden;
+      opacity: 0.22; /* Visibilité des oiseaux */
+      filter: invert(1) brightness(2); /* Force le blanc */
+    }
+
+    /* Colonne Gauche */
+    .wings-left { left: 0; }
+    /* Colonne Droite */
+    .wings-right { right: 0; }
+
+    /* Le motif d'oiseaux avec effet décalé et moins droit */
+    .wings-pattern {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background-image: url('oiseaux.gif');
+      background-repeat: repeat;
+      background-size: 110px; /* Taille des oiseaux */
+      /* Rotation globale de la grille pour casser les lignes droites */
+      transform: rotate(-12deg); 
+    }
+
     }
 
     }
@@ -121,7 +135,15 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-300">
 
-  <!-- BANNIÈRE INCURVÉE AVEC VOTRE IMAGE -->
+  
+   <!-- OISEAUX UNIQUEMENT SUR LES CÔTÉS (GAUCHE ET DROITE) -->
+  <div class="wings-decor wings-left md:block hidden">
+    <div class="wings-pattern"></div>
+  </div>
+  <div class="wings-decor wings-right md:block hidden">
+    <div class="wings-pattern" style="transform: rotate(15deg) scaleX(-1);"></div>
+  </div>
+ <!-- BANNIÈRE INCURVÉE AVEC VOTRE IMAGE -->
   <header class="banner-container">
     <div class="banner-background"></div>
     
