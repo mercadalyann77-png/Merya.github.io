@@ -25,26 +25,40 @@
       position: relative;
     }
 
-      /* Conteneur pour masquer le débordement sur mobile */
+        /* Conteneur des oiseaux (fixé uniquement en haut sur les côtés) */
     .wings-decor {
       position: fixed;
       top: 0;
-      bottom: 0;
-      width: 140px; /* Largeur de la zone des oiseaux sur les côtés */
+      width: 160px; /* Largeur de la zone sur les côtés */
+      height: 500px; /* Hauteur maximale : s'arrête bien avant le bas du site */
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
-      opacity: 0.22; /* Visibilité des oiseaux */
-      filter: invert(1) brightness(2); /* Force le blanc */
+      opacity: 0.25; /* Visibilité des oiseaux blancs */
+      filter: invert(1) brightness(2); /* Rend les oiseaux blancs */
+      
+      /* MASQUE MAGIQUE : Fait disparaître les oiseaux en fondu vers le bas et le centre */
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
     }
 
-    /* Colonne Gauche */
-    .wings-left { left: 0; }
-    /* Colonne Droite */
-    .wings-right { right: 0; }
+    /* Positionnement strict à gauche et à droite */
+    .wings-left { 
+      left: 10px; 
+    }
+    .wings-right { 
+      right: 10px; 
+      transform: scaleX(-1); /* Effet miroir à droite pour que les oiseaux volent vers l'intérieur */
+    }
 
-    /* Le motif d'oiseaux avec effet décalé et moins droit */
+    /* Le motif en mosaïque régulier et propre */
     .wings-pattern {
+      width: 100%;
+      height: 100%;
+      background-image: url('oiseaux.gif');
+      background-repeat: repeat;
+      background-size: 110px; /* Taille des oiseaux */
+    }
+
       position: absolute;
       top: -10%;
       left: -10%;
