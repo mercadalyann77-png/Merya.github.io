@@ -25,36 +25,25 @@
       position: relative;
     }
 
-          /* Conteneur des oiseaux (fixé uniquement sur les côtés) */
-    .wings-decor {
+    /* Effet d'animation des oiseaux blancs uniquement sur les bords noirs extérieurs */
+    body::before {
+      content: "";
       position: fixed;
-      top: 140px; /* Commence pile sous votre bannière incurvée */
-      width: 130px; /* Largeur serrée pour rester uniquement sur les bords */
-      height: 380px; /* S'arrête net avant le bas du site */
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.18; /* Visibilité douce pour un rendu croquis discret */
-      filter: invert(1) brightness(2); /* Force les oiseaux en blanc */
-      overflow: hidden;
-    }
-
-    /* Positionnement strict à gauche et à droite */
-    .wings-left { 
-      left: 15px; 
-    }
-    
-    .wings-right { 
-      right: 15px; 
-      transform: scaleX(-1); /* Effet miroir pour casser la monotonie informatique */
-    }
-
-    /* Le motif en mosaïque régulier et propre */
-    .wings-pattern {
+      top: 260px; /* Commence pile sous la courbe de ta bannière */
+      left: 0;
       width: 100%;
-      height: 100%;
+      height: 380px; /* S'arrête avant le bas du site */
       background-image: url('oiseaux.gif');
       background-repeat: repeat;
-      background-size: 100px; /* Taille parfaite pour en voir plusieurs voler */
+      background-size: 110px; /* Taille des oiseaux */
+      filter: invert(1) brightness(2); /* Force le blanc */
+      opacity: 0.18; /* Rend les oiseaux discrets */
+      pointer-events: none;
+      z-index: 0;
+
+      /* DÉCOUPE DES ZONES ROUGES : On garde 15% à gauche, 15% à droite, on vide le milieu */
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 15% 0%, 15% 100%, 85% 100%, 85% 0%, 15% 0%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 15% 0%, 15% 100%, 85% 100%, 85% 0%, 15% 0%);
     }
 
     }
@@ -148,15 +137,6 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-300">
-
-  
-   <!-- OISEAUX UNIQUEMENT SUR LES CÔTÉS (GAUCHE ET DROITE) -->
-  <div class="wings-decor wings-left md:block hidden">
-    <div class="wings-pattern"></div>
-  </div>
-  <div class="wings-decor wings-right md:block hidden">
-    <div class="wings-pattern" style="transform: rotate(15deg) scaleX(-1);"></div>
-  </div>
  <!-- BANNIÈRE INCURVÉE AVEC VOTRE IMAGE -->
   <header class="banner-container">
     <div class="banner-background"></div>
