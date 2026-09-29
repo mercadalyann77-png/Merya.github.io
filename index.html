@@ -234,39 +234,35 @@
 
   </main>
 
-  <!-- MODALE AVEC FLÈCHES DE NAVIGATION DROITE/GAUCHE -->
+   <!-- MODALE AVEC FLÈCHES FIXES SUR LES CÔTÉS (NE DÉFILENT PAS AU SCROLL) -->
   <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm overflow-y-auto">
-    <div id="modalBackground" class="min-h-screen px-4 md:px-12 py-6 flex flex-col items-center relative">
+    
+    <!-- Flèche Gauche Fixe (Reste au milieu à gauche de l'écran quoi qu'il arrive) -->
+    <button id="prevProjectBtn" class="fixed left-4 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-amber-400 hover:scale-120 text-6xl font-light transition-all p-4 focus:outline-none select-none z-50" title="Projet précédent">
+      ‹
+    </button>
+
+    <!-- Flèche Droite Fixe (Reste au milieu à droite de l'écran quoi qu'il arrive) -->
+    <button id="nextProjectBtn" class="fixed right-4 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-amber-400 hover:scale-120 text-6xl font-light transition-all p-4 focus:outline-none select-none z-50" title="Projet suivant">
+      ›
+    </button>
+
+    <div id="modalBackground" class="min-h-screen px-16 md:px-24 py-6 flex flex-col items-center relative">
       
-      <!-- Bouton Fermer épuré -->
-      <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-4xl font-light focus:outline-none transition-colors z-50" title="Fermer">
+      <!-- Bouton Fermer épuré style Claire Hummel -->
+      <button onclick="closeModal()" class="fixed top-6 right-6 text-neutral-400 hover:text-white text-4xl font-light focus:outline-none transition-colors z-50" title="Fermer">
         ✕
       </button>
 
       <!-- Titres épurés -->
-      <div class="w-full max-w-5xl text-left mt-8 mb-6">
+      <div class="w-full max-w-4xl text-left mt-8 mb-6">
         <h2 id="modalProjectTitle" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white uppercase"></h2>
         <p id="modalProjectSub" class="text-[10px] text-neutral-400 tracking-[0.2em] uppercase mt-1"></p>
       </div>
 
-      <!-- Zone principale avec l'image et ses flèches sur les côtés -->
-      <div class="w-full max-w-6xl flex items-center justify-between relative px-4 md:px-12">
-        
-        <!-- Flèche Gauche (S'illumine en blanc/ambre au survol) -->
-        <button id="prevProjectBtn" class="text-neutral-500 hover:text-amber-400 hover:scale-110 text-5xl font-light transition-all p-4 focus:outline-none select-none" title="Projet précédent">
-          ‹
-        </button>
-
-        <!-- Conteneur d'images centré -->
-        <div id="modalImagesContainer" class="w-full max-w-4xl flex flex-col items-center space-y-6 mb-10 mx-auto">
-          <!-- Dynamic images injected here -->
-        </div>
-
-        <!-- Flèche Droite (S'illumine en blanc/ambre au survol) -->
-        <button id="nextProjectBtn" class="text-neutral-500 hover:text-amber-400 hover:scale-110 text-5xl font-light transition-all p-4 focus:outline-none select-none" title="Projet suivant">
-          ›
-        </button>
-
+      <!-- Conteneur d'images centré (Les flèches n'étant plus à l'intérieur, elles restent immobiles) -->
+      <div id="modalImagesContainer" class="w-full max-w-4xl flex flex-col items-center space-y-6 mb-10 mx-auto">
+        <!-- Dynamic images injected here -->
       </div>
 
     </div>
