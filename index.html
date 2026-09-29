@@ -433,10 +433,11 @@
 
 projects.forEach(project => {
     const card = document.createElement('div');
-    card.className = "group relative aspect-[4/3] rounded overflow-hidden cursor-pointer bg-neutral-900";
+    // On force un design propre sans fond gris et avec de grandes images horizontales
+    card.className = "group relative aspect-[16/10] rounded overflow-hidden cursor-pointer";
     card.onclick = () => openProjectModal(project);
 
-    // Affichage de l'image seule, sans aucun texte, avec un léger zoom au survol
+    // Uniquement l'image, sans aucun texte ni titre
     card.innerHTML = `
             </span>
             <h3 class="text-xl font-bold tracking-[0.15em] text-white uppercase mt-1 group-hover:text-amber-400 transition-colors">
