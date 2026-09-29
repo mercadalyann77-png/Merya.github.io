@@ -25,27 +25,30 @@
       position: relative;
     }
 
-        /* Effet d'animation des oiseaux blancs uniquement sur les bords noirs extérieurs */
+           /* Nuée d'oiseaux blancs gros, uniques sur les bords et cachés en bas */
     body::before {
       content: "";
       position: fixed;
-      top: 0; /* MODIFIÉ : On remplace 260px par 0 pour démarrer tout en haut */
+      top: 0;
       left: 0;
       width: 100%;
-      height: 100%; /* MODIFIÉ : On remplace 380px par 100% pour descendre jusqu'en bas */
+      height: 100%;
       background-image: url('oiseaux.gif');
       background-repeat: repeat;
-      background-size: 110px;
-      filter: invert(1) brightness(2);
-      opacity: 0.18;
+      
+      /* --- AUGMENTE LA TAILLE (OISEAUX PLUS GROS) --- */
+      background-size: 190px; 
+      
+      filter: invert(1) brightness(2); /* Force le blanc pur */
+      opacity: 0.25;
       pointer-events: none;
       z-index: 0;
+      mix-blend-mode: screen; /* Supprime totalement les reflets de colonnes grises */
 
-      /* DÉCOUPE DES ZONES : On garde 15% à gauche, 15% à droite, on vide le milieu */
-      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 15% 0%, 15% 100%, 85% 100%, 85% 0%, 15% 0%);
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 15% 0%, 15% 100%, 85% 100%, 85% 0%, 15% 0%);
+      /* --- DÉCOUPE LASER : SUPPRIME LA COLONNE INTÉRIEURE (SÉLECTIONNE LE BORD STRICT) --- */
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%, 0% 0%, 10% 0%, 10% 80%, 90% 80%, 90% 0%, 10% 0%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%, 0% 0%, 10% 0%, 10% 80%, 90% 80%, 90% 0%, 10% 0%);
     }
-
 
     }
 
