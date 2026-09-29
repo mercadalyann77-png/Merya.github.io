@@ -115,25 +115,19 @@
       .banner-content { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
       .banner-background { clip-path: ellipse(120% 60% at 50% 30%); }
     }
-/* Grille pour afficher 4 projets par ligne sans texte */
+/* Grille pour afficher exactement 4 grands projets sur une seule ligne horizontale sans texte */
 #galleryView {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 20px !important;
-    max-width: 1400px;
-    margin: 0 auto;
+    gap: 24px !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
-@media (max-width: 1024px) {
-    #galleryView {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
+#galleryView > div {
+    aspect-ratio: 16 / 10 !important; /* Donne un format bien large et grand */
+    height: auto !important;
 }
-
-@media (max-width: 640px) {
-    #galleryView {
-        grid-template-columns: 1fr !important;
-    }
 }
   </style>
 </head>
