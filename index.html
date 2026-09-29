@@ -443,7 +443,8 @@
       categoryHeader.classList.remove('hidden');
       categoryHeader.classList.add('flex');
       galleryView.classList.remove('hidden');
-      galleryView.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full";
+     galleryView.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-0 w-screen -mx-[calc((100vw-100%)/2)] max-w-none";
+
       activeCategoryTitle.innerText = catName;
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
