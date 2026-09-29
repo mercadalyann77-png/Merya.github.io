@@ -25,7 +25,7 @@
       position: relative;
     }
 
-    /* Effet d'animation des oiseaux en transparence sur les côtés */
+       /* Effet d'animation des oiseaux en mosaïque sur le fond */
     body::before {
       content: "";
       position: fixed;
@@ -33,13 +33,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* Version inversée transparente du GIF (oiseaux sombres sans le carré blanc) */
-      background-image: url('https://giphy.com');
+      /* Utilise maintenant votre fichier local hébergé en toute sécurité */
+      background-image: url('oiseaux.gif');
       background-repeat: repeat;
-      background-size: 240px; /* Ajustez la taille des oiseaux ici */
-      opacity: 0.15; /* Très léger (15%) pour ne pas fatiguer les yeux ni gêner la lecture de vos œuvres */
-      pointer-events: none; /* Permet de cliquer à travers sans bloquer le site */
+      background-size: 200px; /* Ajustez pour avoir plus ou moins d'oiseaux */
+      opacity: 0.15; /* Reste discret sur le fond texturé */
+      pointer-events: none;
       z-index: 0;
+    }
+
     }
 
 
