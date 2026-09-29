@@ -25,56 +25,30 @@
       position: relative;
     }
 
-           /* Nuée d'oiseaux blancs gros, uniques sur les bords et cachés en bas */
-    body::before {
-      content: "";
+              /* Style pour afficher exactement 2 rangées d'oiseaux côte à côte */
+    .bird-column {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 260px; /* Aligné sous la courbe de ta bannière */
+      width: 260px; /* LARGEUR DOUBLE : Assez grand pour mettre exactement 2 oiseaux côte à côte */
+      height: 480px; /* S'arrête net avant tes mentions légales */
       background-image: url('oiseaux.gif');
-      background-repeat: repeat;
-      
-      /* --- AUGMENTE LA TAILLE (OISEAUX PLUS GROS) --- */
-      background-size: 190px; 
-      
+      background-repeat: repeat; /* Autorise la répétition en largeur ET en hauteur */
+      background-position: left top;
+      background-size: 130px; /* TAILLE DE L'OISEAU : 130px x 2 = 260px (le compte est parfait) */
       filter: invert(1) brightness(2); /* Force le blanc pur */
       opacity: 0.25;
       pointer-events: none;
       z-index: 0;
-      mix-blend-mode: screen; /* Supprime totalement les reflets de colonnes grises */
-
-      /* --- DÉCOUPE LASER : SUPPRIME LA COLONNE INTÉRIEURE (SÉLECTIONNE LE BORD STRICT) --- */
-      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%, 0% 0%, 10% 0%, 10% 80%, 90% 80%, 90% 0%, 10% 0%);
-      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%, 0% 0%, 10% 0%, 10% 80%, 90% 80%, 90% 0%, 10% 0%);
+      mix-blend-mode: screen; /* Rend le fond du GIF 100% transparent */
     }
 
-    }
-
-      position: absolute;
-      top: -10%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      background-image: url('oiseaux.gif');
-      background-repeat: repeat;
-      background-size: 110px; /* Taille des oiseaux */
-      /* Rotation globale de la grille pour casser les lignes droites */
-      transform: rotate(-12deg); 
-    }
-
-    }
-
-    }
-
-    }
-
-
+    .bird-left { left: 10px; }   /* Collé au bord gauche */
+    .bird-right { right: 10px; } /* Collé au bord droit */
 
 
     }
 
+    
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -141,6 +115,9 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-300">
+    <div class="bird-column bird-left"></div>
+  <div class="bird-column bird-right"></div>
+
  <!-- BANNIÈRE INCURVÉE AVEC VOTRE IMAGE -->
   <header class="banner-container">
     <div class="banner-background"></div>
