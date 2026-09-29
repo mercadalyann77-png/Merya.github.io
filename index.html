@@ -25,29 +25,27 @@
       position: relative;
     }
 
-        /* Conteneur des oiseaux (fixé uniquement en haut sur les côtés) */
+          /* Conteneur des oiseaux (fixé uniquement sur les côtés) */
     .wings-decor {
       position: fixed;
-      top: 0;
-      width: 160px; /* Largeur de la zone sur les côtés */
-      height: 500px; /* Hauteur maximale : s'arrête bien avant le bas du site */
+      top: 140px; /* Commence pile sous votre bannière incurvée */
+      width: 130px; /* Largeur serrée pour rester uniquement sur les bords */
+      height: 380px; /* S'arrête net avant le bas du site */
       pointer-events: none;
       z-index: 0;
-      opacity: 0.25; /* Visibilité des oiseaux blancs */
-      filter: invert(1) brightness(2); /* Rend les oiseaux blancs */
-      
-      /* MASQUE MAGIQUE : Fait disparaître les oiseaux en fondu vers le bas et le centre */
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      opacity: 0.18; /* Visibilité douce pour un rendu croquis discret */
+      filter: invert(1) brightness(2); /* Force les oiseaux en blanc */
+      overflow: hidden;
     }
 
     /* Positionnement strict à gauche et à droite */
     .wings-left { 
-      left: 10px; 
+      left: 15px; 
     }
+    
     .wings-right { 
-      right: 10px; 
-      transform: scaleX(-1); /* Effet miroir à droite pour que les oiseaux volent vers l'intérieur */
+      right: 15px; 
+      transform: scaleX(-1); /* Effet miroir pour casser la monotonie informatique */
     }
 
     /* Le motif en mosaïque régulier et propre */
@@ -56,7 +54,9 @@
       height: 100%;
       background-image: url('oiseaux.gif');
       background-repeat: repeat;
-      background-size: 110px; /* Taille des oiseaux */
+      background-size: 100px; /* Taille parfaite pour en voir plusieurs voler */
+    }
+
     }
 
       position: absolute;
