@@ -115,7 +115,26 @@
       .banner-content { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
       .banner-background { clip-path: ellipse(120% 60% at 50% 30%); }
     }
+/* Grille pour afficher 4 projets par ligne sans texte */
+#galleryView {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
+@media (max-width: 1024px) {
+    #galleryView {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    #galleryView {
+        grid-template-columns: 1fr !important;
+    }
+}
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-300">
@@ -418,22 +437,13 @@
       galleryView.innerHTML = '';
       const projects = projectsData[catKey] || [];
 
-      projects.forEach(project => {
-        const card = document.createElement('div');
-        card.className = 'group bg-neutral-900/80 border border-neutral-800/90 rounded-lg overflow-hidden cursor-pointer hover:border-amber-500/50 transition-all duration-300 shadow-lg';
-        card.onclick = () => openProjectModal(project);
+projects.forEach(project => {
+    const card = document.createElement('div');
+    card.className = "group relative aspect-[4/3] rounded overflow-hidden cursor-pointer bg-neutral-900";
+    card.onclick = () => openProjectModal(project);
 
-        card.innerHTML = `
-          <div class="aspect-[16/10] w-full overflow-hidden bg-neutral-950 relative">
-            <img src="${project.thumb}" 
-                 onerror="this.onerror=null; this.src='${project.fallbackThumb}';" 
-                 alt="${project.title}" 
-                 class="w-full h-full object-cover card-zoom-img">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-6">
-            <span class="text-[10px] tracking-[0.25em] text-amber-500 font-semibold uppercase">
-              ${project.category}
+    // Affichage de l'image seule, sans aucun texte, avec un léger zoom au survol
+    card.innerHTML = `
             </span>
             <h3 class="text-xl font-bold tracking-[0.15em] text-white uppercase mt-1 group-hover:text-amber-400 transition-colors">
               ${project.title}
