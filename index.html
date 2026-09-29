@@ -25,24 +25,28 @@
       position: relative;
     }
 
-               /* Nuée d'oiseaux géante sur tout le fond, coupée net en bas */
+                 /* Nuée d'oiseaux géante sur tout le fond, collée automatiquement au trait du bas */
     body::before {
       content: "";
-      position: fixed;
-      top: 260px; /* Aligné pile sous la courbe de ta bannière */
+      position: absolute; /* MODIFIÉ : Passe de fixed à absolute pour suivre le défilement du site */
+      top: 260px; /* Aligné pile sous la courbe de votre bannière */
       left: 0;
-      width: 100%; /* S'étale sur TOUTE la largeur du site */
-      height: 560px; /* S'arrête net au ras de tes 3 images */
+      width: 100%; /* S'étale sur toute la largeur */
+      
+      /* --- L'ASTUCE POUR COLLER PARFAITEMENT AU TRAIT DU BAS --- */
+      bottom: 64px; /* S'arrête exactement à 64px du bas du site (pile là où commence votre footer) */
+      
       background-image: url('oiseaux.gif');
-      background-repeat: repeat; /* S'étale partout en largeur et hauteur */
+      background-repeat: repeat;
       background-position: left top;
-      background-size: 130px; /* Conserve la taille actuelle que tu aimes */
-      filter: invert(1) brightness(2); /* Force le blanc pur */
-      opacity: 0.25; /* Reste discret sous ton travail */
+      background-size: 130px;
+      filter: invert(1) brightness(2);
+      opacity: 0.25;
       pointer-events: none;
       z-index: 0;
-      mix-blend-mode: screen; /* Rend le fond du GIF 100% transparent */
+      mix-blend-mode: screen;
     }
+
 
 
     }
