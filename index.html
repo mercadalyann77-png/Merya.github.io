@@ -39,41 +39,81 @@
       background: rgba(15, 15, 18, 0.85);
       backdrop-filter: blur(16px);
     }
+     /* --- STYLE DE LA BANNIÈRE INCURVÉE (SANS DÉGRADÉ) --- */
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background-color: #0b0b0d;
+    }
+
+    .banner-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('image_kmRxgB.png'); 
+      background-size: cover;
+      background-position: center center;
+      clip-path: ellipse(80% 60% at 50% 30%);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .banner-container { height: 320px; }
+      .banner-content { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+      .banner-background { clip-path: ellipse(120% 60% at 50% 30%); }
+    }
+
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-300">
 
-  <header class="w-full border-b border-neutral-800/80 bg-neutral-900/40 sticky top-0 z-40 glass-header">
-    <div class="max-w-7xl mx-auto px-6 md:px-10 py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
-      
-      <!-- LEFT: Name & Subtitle -->
+  <!-- BANNIÈRE INCURVÉE AVEC VOTRE IMAGE -->
+  <header class="banner-container">
+    <div class="banner-background"></div>
+    
+    <div class="banner-content">
+      <!-- GAUCHE : Nom & Sous-titre -->
       <div class="flex flex-col cursor-pointer" onclick="showHome()">
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-[0.2em] text-white uppercase hover:text-amber-400 transition-colors">
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-[0.2em] text-white uppercase hover:text-amber-400 transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
           YANN MERCADAL
         </h1>
-        <p class="text-[11px] md:text-xs tracking-[0.25em] text-neutral-400 uppercase font-medium mt-1">
+        <p class="text-[11px] md:text-xs tracking-[0.25em] text-neutral-200 uppercase font-medium mt-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
           CONCEPT ARTIST 2D & 3D
         </p>
       </div>
 
-      <!-- RIGHT: Navigation / Social Links & Contact -->
-      <nav class="flex items-center flex-wrap gap-3 md:gap-4 text-xs tracking-[0.18em] uppercase">
-        <a href="https://www.artstation.com/yannm" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
+      <!-- DROITE : Navigation & Réseaux -->
+      <nav class="flex items-center flex-wrap justify-center gap-3 md:gap-4 text-xs tracking-[0.18em] uppercase">
+        <a href="https://artstation.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded bg-black/50 backdrop-blur-sm border border-neutral-700/50 text-neutral-200 hover:text-white hover:border-amber-500/60 hover:bg-black/70 transition-all drop-shadow-md">
           ArtStation
         </a>
-        <a href="https://www.linkedin.com/in/yann-mercadal-8489923b4/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded bg-black/50 backdrop-blur-sm border border-neutral-700/50 text-neutral-200 hover:text-white hover:border-amber-500/60 hover:bg-black/70 transition-all drop-shadow-md">
           LinkedIn
         </a>
-        <a href="mailto:mercadal.yann77@gmail.com" class="px-3.5 py-2 rounded bg-neutral-800/70 border border-neutral-700/50 text-neutral-300 hover:text-white hover:border-amber-500/60 hover:bg-neutral-800 transition-all">
+        <a href="mailto:mercadal.yann77@gmail.com" class="px-3.5 py-2 rounded bg-black/50 backdrop-blur-sm border border-neutral-700/50 text-neutral-200 hover:text-white hover:border-amber-500/60 hover:bg-black/70 transition-all drop-shadow-md">
           Email
         </a>
-        <button onclick="openAboutModal()" class="px-4 py-2 rounded bg-amber-500/10 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-semibold transition-all">
+        <button onclick="openAboutModal()" class="px-4 py-2 rounded bg-amber-500/20 backdrop-blur-sm border border-amber-500/60 text-amber-300 hover:bg-amber-500 hover:text-black font-semibold transition-all drop-shadow-md">
           À Propos
         </button>
       </nav>
-
     </div>
   </header>
+
 
   <main class="max-w-7xl mx-auto px-6 md:px-10 py-10 flex-grow w-full">
     
