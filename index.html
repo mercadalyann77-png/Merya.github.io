@@ -25,30 +25,7 @@
       position: relative;
     }
 
-                    /* Nuée d'oiseaux géante sur tout le fond, jusqu'au tout dernier pixel du site */
-    body::before {
-      content: "";
-      position: absolute; 
-      top: 260px; /* Aligné sous la courbe de votre bannière */
-      left: 0;
-      width: 100%;
-      
-      /* --- EN DEUX LIGNES : TOUT EN BAS DE LA PAGE --- */
-      bottom: 0; /* Descend tout en bas du site sans s'arrêter */
-      height: auto; /* Permet au bloc de s'étirer librement */
-      
-      background-image: url('oiseaux.gif');
-      background-repeat: repeat;
-      background-position: left top;
-      background-size: 130px;
-      filter: invert(1) brightness(2);
-      opacity: 0.25;
-      pointer-events: none;
-      z-index: 0;
-      mix-blend-mode: screen;
-    }
-
-
+  
 
     }
 
